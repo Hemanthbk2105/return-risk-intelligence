@@ -1,0 +1,33 @@
+project:
+  name: "Return-Risk Intelligence"
+  version: "1.0"
+  description: "AI-powered return-risk prediction and cost-aware business decision system"
+
+model:
+  name: "LightGBM"
+  version: "V2"
+  features: 43
+
+explainability:
+  method: "SHAP"
+
+business:
+  intervention_effectiveness: 0.40
+  intervention_cost: 150
+
+risk_levels:
+  low:
+    min: 0
+    max: 20
+  medium:
+    min: 20
+    max: 50
+  high:
+    min: 50
+    max: 75
+  very_high:
+    min: 75
+    max: 90
+  critical:
+    min: 90
+    max: 100
