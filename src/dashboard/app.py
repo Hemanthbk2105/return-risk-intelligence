@@ -832,6 +832,101 @@ if page == "📊 Executive Overview":
 
 
     st.divider()
+    
+    # ========================================================
+    # MODEL PERFORMANCE
+    # ========================================================
+
+    st.subheader(
+        "🧠 Model Performance"
+    )
+
+    st.caption(
+        "Held-out test-set evaluation for Behaviour-Aware LightGBM V2"
+    )
+
+    m1, m2, m3, m4, m5, m6 = st.columns(6)
+
+    m1.metric(
+        "Test Orders",
+        "3,965"
+    )
+
+    m2.metric(
+        "Precision",
+        "17.25%"
+    )
+
+    m3.metric(
+        "Recall",
+        "22.99%"
+    )
+
+    m4.metric(
+        "PR-AUC",
+        "0.1650"
+    )
+
+    m5.metric(
+        "ROC-AUC",
+        "0.6036"
+    )
+
+    m6.metric(
+        "Accuracy",
+        "79.00%"
+    )
+
+    st.divider()
+
+
+    # ========================================================
+    # ERROR COST ANALYSIS
+    # ========================================================
+
+    st.subheader(
+        "💰 Error Cost Analysis"
+    )
+
+    st.caption(
+        "Cost analysis on the held-out test set at a 0.50 prediction threshold"
+    )
+
+    e1, e2, e3, e4, e5 = st.columns(5)
+
+    e1.metric(
+        "False Positives",
+        "494"
+    )
+
+    e2.metric(
+        "False Negatives",
+        "345"
+    )
+
+    e3.metric(
+        "FP Intervention Cost",
+        "₹74,100"
+    )
+
+    e4.metric(
+        "FN Missed-Return Cost",
+        "₹2,95,793.99"
+    )
+
+    e5.metric(
+        "Total Error Cost",
+        "₹3,69,893.99"
+    )
+
+    st.info(
+        "Missed returns create substantially more financial exposure "
+        "than unnecessary interventions. This is why the system uses "
+        "cost-aware risk ranking and business intervention rather "
+        "than relying on accuracy alone."
+    )
+
+    st.divider()
 
 
     st.subheader(
