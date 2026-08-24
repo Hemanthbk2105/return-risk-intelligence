@@ -12,6 +12,7 @@ explainability:
   method: "SHAP"
 
 business:
+  return_cost_rate: 0.08
   intervention_effectiveness: 0.40
   intervention_cost: 150
 

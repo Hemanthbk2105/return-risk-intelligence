@@ -154,7 +154,220 @@ The 43 features include:
 - Return-rate shifts
 - Category switching behaviour
 
+
 ---
+
+# Return-Risk Intelligence 🚀
+
+AI-powered return-risk prediction and business decision system for e-commerce orders.
+
+## 📌 Project Overview
+
+Return-Risk Intelligence predicts the probability that an order will be returned and converts that prediction into an actionable business decision.
+
+The system combines:
+
+- LightGBM machine learning
+- 43 point-in-time features
+- Behaviour analytics
+- SHAP explainability
+- Risk scoring
+- Financial exposure calculation
+- Risk monitoring
+- Order-level investigation
+- Cost-aware intervention
+- Business impact analysis
+- Capacity optimization
+- Ranking strategy comparison
+- Threshold optimization
+
+The goal is not only to predict whether an order may be returned, but also to help the business decide **which orders require attention and whether intervention is financially worthwhile**.
+
+---
+
+## 🎯 Main Features
+
+### 1. 📊 Executive Overview
+
+Provides a high-level view of the return-risk system:
+
+- Total orders
+- High-risk orders
+- Very-high-risk orders
+- Critical orders
+- Expected return exposure
+- Average return probability
+- Risk distribution
+- Recommended actions
+
+### 2. ⚡ Real-Time Risk Prediction
+
+Users can enter order information and generate a real-time risk assessment.
+
+The system provides:
+
+- Return probability
+- Risk score
+- Risk tier
+- Expected return exposure
+- Financial risk
+- Recommended business action
+- Risk-increasing factors
+- Risk-reducing factors
+- SHAP-based explanations
+
+The prediction pipeline uses the same 43-feature configuration used during model training.
+
+### 3. 🚨 Risk Monitoring
+
+Allows users to identify and monitor high-risk orders.
+
+Users can filter orders based on:
+
+- Risk tier
+- Minimum risk score
+- Order ID
+
+The monitoring view displays:
+
+- Order value
+- Return probability
+- Risk score
+- Risk tier
+- Expected return exposure
+- Priority
+- Recommended action
+
+### 4. 🔎 Order Investigation
+
+Provides detailed analysis for an individual order.
+
+The investigation view includes:
+
+- Return probability
+- Risk score
+- Risk tier
+- Order value
+- Expected return exposure
+- Financial risk
+- Recommended action
+- Risk-increasing factors
+- Risk-reducing factors
+- Complete order information
+
+This allows users to understand not only the prediction, but also **why the model produced that prediction**.
+
+### 5. 💰 Business Impact
+
+Evaluates the financial impact of risk-based intervention.
+
+The system analyzes:
+
+- Baseline expected loss
+- Expected loss after intervention
+- Potential loss avoided
+- Intervention cost
+- Net benefit
+- ROI
+- Capacity optimization
+- Ranking strategies
+- Intervention thresholds
+
+---
+
+## 🧠 Machine Learning
+
+The prediction system uses **LightGBM** for return-risk classification.
+
+The model uses **43 point-in-time features** generated from:
+
+- Order information
+- Customer information
+- Product information
+- Historical return behaviour
+- Recent customer behaviour
+- Order-value changes
+- Return-rate changes
+- Category behaviour
+
+### Model Features
+
+The real-time predictor uses the same feature order as the trained model.
+
+The 43 features include:
+
+- Order value
+- Payment method
+- Discount percentage
+- Product category
+- Size variant
+- City tier
+- Account age
+- Product price
+- Historical product return rate
+- Previous order behaviour
+- Historical customer return rate
+- Recent return behaviour
+- Recent order frequency
+- Order-value shifts
+- Return-rate shifts
+- Category switching behaviour
+
+---
+
+## 📈 Model Performance & Business Cost
+
+The Behaviour-Aware LightGBM V2 model was evaluated on a **held-out test set of 3,965 orders**.
+
+### Test Set Performance
+
+| Metric | Test Result |
+|---|---:|
+| Precision | 17.25% |
+| Recall | 22.99% |
+| F1 Score | 20.00% |
+| PR-AUC | 0.1650 |
+| ROC-AUC | 0.6036 |
+| Accuracy | 79.00% |
+
+### Confusion Matrix
+
+At the 0.50 prediction threshold:
+
+| | Predicted No Return | Predicted Return |
+|---|---:|---:|
+| **Actual No Return** | 3,023 | 494 |
+| **Actual Return** | 345 | 103 |
+
+This gives:
+
+- **True Negatives:** 3,023
+- **False Positives:** 494
+- **False Negatives:** 345
+- **True Positives:** 103
+
+### Business Cost Analysis
+
+The project uses the following cost assumptions:
+
+- Intervention cost per selected order: **₹150**
+- Estimated return-related cost: **8% of order value**
+
+For the held-out test set:
+
+```text
+False Positive Cost
+= 494 × ₹150
+= ₹74,100
+
+False Negative Cost
+= Sum(Order Value × 8%)
+  for false-negative orders
+= ₹2,95,793.99
+
+Total Error Cost
+= ₹74,100 + ₹2,95,793.99
+= ₹3,69,893.99
 
 ## 🔎 Explainability
 
