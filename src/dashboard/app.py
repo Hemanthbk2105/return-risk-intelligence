@@ -155,12 +155,23 @@ st.markdown(
     }
 
     .decision-box {
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        border: 1px solid #e5e7eb;
-        margin-top: 15px;
-        margin-bottom: 15px;
+    background: #ffffff;
+    color: #111827 !important;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+
+    .decision-box b {
+        color: #111827 !important;
+        font-weight: 700;
+    }
+
+    .decision-box h3 {
+        color: #111827 !important;
+        margin-top: 10px;
     }
 
     .risk-low {
